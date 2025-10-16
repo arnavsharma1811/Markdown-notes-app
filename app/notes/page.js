@@ -10,7 +10,11 @@ export default function NotesPage() {
   const [text, setText] = useState('');
   const [showNav, setShowNav] = useState(false);
   const { currentUser, isLoadingUser } = useAuth()
-
+  const [note , setNote] = useState({
+    content: ' '
+  })
+  const [noteIds, setNoteIds] = useState([])
+  const [savingNote, setSavingNote] = useState(false)
 
   function handleToggleMenu() {
     setShowNav(!showNav);
@@ -19,7 +23,18 @@ export default function NotesPage() {
   function handleToggleViewer() {
     setIsViewer(!isViewer)
   }
+  
+  function handleCreateNote (){
+   setNote({content : ''})
+  }
 
+  function handleEditNote(e){
+  setNote({...note, content: e.target.value})
+  }
+
+  function handleSaveNote (){
+
+  }
 
   if (isLoadingUser) {
     return (
