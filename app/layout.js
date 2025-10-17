@@ -1,6 +1,5 @@
-
 import "./globals.css";
-import "./fanta.css"
+import './fanta.css'
 import Head from "./head";
 import AuthProvider from "@/context/AuthContext";
 
@@ -10,15 +9,17 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
+
   return (
     <html lang="en">
       <Head />
       <AuthProvider>
-      <body>
-        <div id = "app">{children}</div>
-        <div id = "portal"></div>
-        
-      </body>
+        <body >
+          <div id="app">{children}</div>
+          <div id="portal"></div>
+
+        </body>
       </AuthProvider>
     </html>
   );
